@@ -98,6 +98,12 @@ public class QuizManagerSingleton {
         // increment score and return true. Otherwise return false.
         //
         // NOTE: Do NOT advance the question here. The Activity controls navigation.
+
+        if (selectedIndex == questions.get(currentIndex).getCorrectIndex()) {
+            score+= 1;
+            return true;
+        }
+
         return false;
     }
 }

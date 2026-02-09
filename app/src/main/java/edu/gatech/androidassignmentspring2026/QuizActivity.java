@@ -59,7 +59,7 @@ public class QuizActivity extends AppCompatActivity
         // TODO 3:
         // Find btnReset from the layout using its id.
         // Note: activity_quiz.xml has TODO 7 that creates this button.
-        btnReset = null;
+        btnReset = findViewById(R.id.btnReset);
 
         bindButtonHandlers();
         renderQuestion();
@@ -95,6 +95,15 @@ public class QuizActivity extends AppCompatActivity
         // - clearSelectionAndFeedback()
         // - renderQuestion()
         // - updateScoreUI()
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                quizManager.reset();
+                clearSelectionAndFeedback();
+                renderQuestion();
+                updateScoreUI();
+            }
+        });
     }
 
     private void handleSubmit()
