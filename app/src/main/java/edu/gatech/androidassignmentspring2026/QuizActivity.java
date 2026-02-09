@@ -33,8 +33,7 @@ public class QuizActivity extends AppCompatActivity
     private QuizManagerSingleton quizManager;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState)
-    {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
@@ -55,7 +54,7 @@ public class QuizActivity extends AppCompatActivity
         // Initialize quizManager using the singleton.
         // quizManager should point to the shared QuizManagerSingleton instance.
         // HINT: You should NOT use 'new' here.
-        quizManager = null;
+        quizManager = QuizManagerSingleton.getInstance();
 
         // TODO 3:
         // Find btnReset from the layout using its id.

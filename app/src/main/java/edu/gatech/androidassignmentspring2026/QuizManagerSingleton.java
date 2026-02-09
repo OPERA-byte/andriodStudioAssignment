@@ -11,8 +11,7 @@ import java.util.List;
  * - Tracks current question index
  * - Tracks score and total answered
  */
-public class QuizManagerSingleton
-{
+public class QuizManagerSingleton {
     private static QuizManagerSingleton instance;
 
     private final List<Question> questions;

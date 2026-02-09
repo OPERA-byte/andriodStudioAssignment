@@ -3,8 +3,7 @@ package edu.gatech.androidassignmentspring2026;
 /**
  * Simple model object representing one multiple-choice question.
  */
-public class Question
-{
+public class Question {
     private final String prompt;
     private final String[] choices;
     private final int correctIndex;
