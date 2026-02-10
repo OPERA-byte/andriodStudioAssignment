@@ -15,8 +15,7 @@ import com.google.android.material.button.MaterialButton;
  * QuizActivity is the only screen in this assignment.
  * Students complete several TODOs to make the app fully functional.
  */
-public class QuizActivity extends AppCompatActivity
-{
+public class QuizActivity extends AppCompatActivity {
     private TextView tvScore;
     private TextView tvQuestion;
     private TextView tvFeedback;
@@ -66,10 +65,8 @@ public class QuizActivity extends AppCompatActivity
         updateScoreUI();
     }
 
-    private void bindButtonHandlers()
-    {
-        btnSubmit.setOnClickListener(new View.OnClickListener()
-        {
+    private void bindButtonHandlers() {
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
@@ -77,11 +74,9 @@ public class QuizActivity extends AppCompatActivity
             }
         });
 
-        btnNext.setOnClickListener(new View.OnClickListener()
-        {
+        btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 quizManager.moveToNextQuestion();
                 clearSelectionAndFeedback();
                 renderQuestion();
@@ -106,11 +101,9 @@ public class QuizActivity extends AppCompatActivity
         });
     }
 
-    private void handleSubmit()
-    {
+    private void handleSubmit() {
         int checkedId = rgAnswers.getCheckedRadioButtonId();
-        if (checkedId == -1)
-        {
+        if (checkedId == -1) {
             tvFeedback.setText("Please select an answer before submitting.");
             return;
         }
@@ -131,25 +124,20 @@ public class QuizActivity extends AppCompatActivity
         updateScoreUI();
     }
 
-    private int idToAnswerIndex(int checkedId)
-    {
-        if (checkedId == R.id.rbA)
-        {
+    private int idToAnswerIndex(int checkedId) {
+        if (checkedId == R.id.rbA) {
             return 0;
         }
-        if (checkedId == R.id.rbB)
-        {
+        if (checkedId == R.id.rbB) {
             return 1;
         }
-        if (checkedId == R.id.rbC)
-        {
+        if (checkedId == R.id.rbC) {
             return 2;
         }
         return 3;
     }
 
-    private void renderQuestion()
-    {
+    private void renderQuestion() {
         Question q = quizManager.getCurrentQuestion();
         tvQuestion.setText(q.getPrompt());
 
@@ -159,13 +147,11 @@ public class QuizActivity extends AppCompatActivity
         rbD.setText(q.getChoice(3));
     }
 
-    private void updateScoreUI()
-    {
+    private void updateScoreUI() {
         tvScore.setText("Score: " + quizManager.getScore() + "/" + quizManager.getTotalAnswered());
     }
 
-    private void clearSelectionAndFeedback()
-    {
+    private void clearSelectionAndFeedback() {
         rgAnswers.clearCheck();
         tvFeedback.setText(getString(R.string.feedback_default));
     }

@@ -20,24 +20,20 @@ public class QuizManagerSingleton {
     private int score;
     private int totalAnswered;
 
-    private QuizManagerSingleton()
-    {
+    private QuizManagerSingleton() {
         questions = new ArrayList<>();
         seedQuestions();
         reset();
     }
 
-    public static QuizManagerSingleton getInstance()
-    {
-        if (instance == null)
-        {
+    public static QuizManagerSingleton getInstance() {
+        if (instance == null) {
             instance = new QuizManagerSingleton();
         }
         return instance;
     }
 
-    private void seedQuestions()
-    {
+    private void seedQuestions() {
         questions.add(new Question(
                 "Which component defines the UI layout in Android?",
                 new String[] {"XML", "Gradle", "SQLite", "JUnit"},
@@ -57,8 +53,7 @@ public class QuizManagerSingleton {
         ));
     }
 
-    public void reset()
-    {
+    public void reset() {
         currentIndex = 0;
         score = 0;
         totalAnswered = 0;
@@ -89,8 +84,7 @@ public class QuizManagerSingleton {
         return questions.size();
     }
 
-    public boolean submitAnswer(int selectedIndex)
-    {
+    public boolean submitAnswer(int selectedIndex) {
         totalAnswered += 1;
 
         // TODO 2:

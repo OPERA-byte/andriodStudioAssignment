@@ -8,8 +8,7 @@ public class Question {
     private final String[] choices;
     private final int correctIndex;
 
-    public Question(String prompt, String[] choices, int correctIndex)
-    {
+    public Question(String prompt, String[] choices, int correctIndex) {
         this.prompt = prompt;
         this.choices = choices;
         this.correctIndex = correctIndex;
