@@ -122,17 +122,12 @@ public class QuizActivity extends AppCompatActivity
         // Then update tvFeedback to:
         // - "Correct!" if correct
         // - "Incorrect." if incorrect
-        boolean correct = false;
-
-        if (correct)
-        {
+        boolean correct = quizManager.submitAnswer(selectedIndex);
+        if (correct) {
             tvFeedback.setText("Correct!");
-        }
-        else
-        {
+        } else {
             tvFeedback.setText("Incorrect.");
         }
-
         updateScoreUI();
     }
 

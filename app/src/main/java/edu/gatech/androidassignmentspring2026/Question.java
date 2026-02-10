@@ -29,8 +29,10 @@ public class Question {
     // Implement getChoice(int index)
     // - If index is out of bounds, return an empty string.
     // - Otherwise return the choice at that index.
-    public String getChoice(int index)
-    {
-        return "";
+    public String getChoice(int index) {
+        if (index < 0 || index > choices.length)
+            return "";
+
+        return choices[index];
     }
 }

@@ -102,5 +102,13 @@
          - Have text: @string/reset
          - Be constrained below btnNext and aligned start/end to parent
     -->
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnReset"
+        android:text="@string/reset"
+        app:layout_constraintBottom_toBottomOf="@id/btnNext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

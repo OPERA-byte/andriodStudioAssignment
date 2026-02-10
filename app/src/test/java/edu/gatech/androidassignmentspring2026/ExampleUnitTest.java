@@ -1,15 +1,17 @@
 package edu.gatech.androidassignmentspring2026;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 
 /**
  * Local unit tests (runs on the JVM).
  */
-public class ExampleUnitTest
-{
+public class ExampleUnitTest {
     @Test
-    public void submitAnswer_updatesScoreAndAnswered()
-    {
+    public void submitAnswer_updatesScoreAndAnswered() {
         QuizManagerSingleton mgr = QuizManagerSingleton.getInstance();
         mgr.reset();
 
@@ -26,5 +28,21 @@ public class ExampleUnitTest
         // - correct is false
         // - score is unchanged
         // - totalAnswered increments
+
+        assertTrue(correct);
+
+        int expectedScore = 1;
+        int actualScore = mgr.getScore();
+        assertEquals(expectedScore, actualScore);
+
+        int expectedTotalAnswered = 1;
+        int actualTotalAnswered = mgr.getTotalAnswered();
+        assertEquals(expectedTotalAnswered, actualTotalAnswered);
+
+        correct = mgr.submitAnswer(1);
+        assertFalse(correct);
+
+        assertEquals(expectedScore, mgr.getScore());
+        assertEquals(actualTotalAnswered + 1, mgr.getTotalAnswered());
     }
 }
