@@ -59,28 +59,23 @@ public class QuizManagerSingleton {
         totalAnswered = 0;
     }
 
-    public Question getCurrentQuestion()
-    {
+    public Question getCurrentQuestion() {
         return questions.get(currentIndex);
     }
 
-    public void moveToNextQuestion()
-    {
+    public void moveToNextQuestion() {
         currentIndex = (currentIndex + 1) % questions.size();
     }
 
-    public int getScore()
-    {
+    public int getScore() {
         return score;
     }
 
-    public int getTotalAnswered()
-    {
+    public int getTotalAnswered() {
         return totalAnswered;
     }
 
-    public int getQuestionCount()
-    {
+    public int getQuestionCount() {
         return questions.size();
     }
 

@@ -68,8 +68,7 @@ public class QuizActivity extends AppCompatActivity {
     private void bindButtonHandlers() {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 handleSubmit();
             }
         });

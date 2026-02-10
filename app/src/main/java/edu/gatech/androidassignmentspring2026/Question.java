@@ -14,13 +14,11 @@ public class Question {
         this.correctIndex = correctIndex;
     }
 
-    public String getPrompt()
-    {
+    public String getPrompt() {
         return prompt;
     }
 
-    public int getCorrectIndex()
-    {
+    public int getCorrectIndex() {
         return correctIndex;
     }
 
