@@ -107,7 +107,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnReset"
         android:text="@string/reset"
-        app:layout_constraintBottom_toBottomOf="@id/btnNext"
+        app:layout_constraintTop_toBottomOf="@id/btnNext"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
